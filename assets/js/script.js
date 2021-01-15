@@ -1,36 +1,40 @@
-// The array of questions for the quiz
+// The array of questions, options, and answers for the quiz
 
-var questions = [
-    { q: '1. Commonly used data types DO Not Include:',  
-    choices: ["strings", "booleans", "alerts", "numbers"],
-    correctAnswer: 2
+let questions = [
+    { question: 'Commonly used data types DO Not Include:',  
+    options: [ "1. strings", "2. booleans", "3. alerts", "4. numbers" ],
+    answer: "alerts"
  
 }, {
-     q: '2. The condition in an if / else statement is enclosed with ___.',
-     choices: ["quotes", "curly brackets", "parenthesis", "square brackets"],
-     correctAnswer: 2
+     question: 'The condition in an if / else statement is enclosed with ___.',
+     options: [ "1. quotes", "2. curly brackets", "3. parenthesis", "4. square brackets" ],
+     answer: "parenthesis"
      },
      
  {
-     q: '3. Arrays in JavaScript can be used to store ___.',
-     choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-     correctAnswer: 3
+     question: 'Arrays in JavaScript can be used to store ___.',
+     options: ["1. numbers and strings", "2. other arrays", "3. booleans", "4. all of the above"],
+     answer: "all of the above"
      },
      
  {
-     q: '4. String values must be enclosed within ___ when being assigned to variables.',
-     choices: ["commas", "curly brackets", "quotes", "parenthesis" ],
-     correctAnswer: 2
+     question: 'String values must be enclosed within ___ when being assigned to variables.',
+     options: ["1. commas", "2. curly brackets", "3. quotes", "4. parenthesis" ],
+     correctAnswer: "quotes"
     },
  {
-     q: '5. A very useful tool used during development and debugging for printing content to the debugger is:',
-     choices: ["JavaScript", "terminal/bash", "for loops", "console.log"],
-     correctAnswer: 3
+     question: 'A very useful tool used during development and debugging for printing content to the debugger is:',
+     options: ["1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"],
+     answer: "console.log"
      }];
 
 
-// variables for reference to quiz section
+// selecting all required variables
+var startBtn = document.querySelector(".startBtn");
+var submitBtn = document.querySelector(".submitBtn");
+var option_list = document.querySelector(".option_list");
+var back_button = document.querySelector(".back_button");
+var clear_scores = document.querySelector(".clear_scores");
+var timerEl = document.getElementById('countdown');
 
-
-
-
+//create a function for countdown?

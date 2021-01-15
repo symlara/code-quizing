@@ -11,8 +11,8 @@ nav ul {
   }
 
   .high-scores {
-    color: #3c1361;
-    font-weight: 300;
+    color: #B399D4;
+    font-weight: 800;
     
   }
 
@@ -32,22 +32,20 @@ nav ul {
     padding-bottom: 20px;
   }
 
-  .startBtn {
+  .startBtn{
+      font-size: 16px;
       background-color: #3c1361;
-      padding-top: 2px;
+      padding: 15px 30px;
       color: white;
       border: none;
-      font-size: 16px;
-      padding: 15px 32px;
-      border-radius: 12px;
-      font-weight: 300;
-      transition: all 0.2s;
-      }
+      border-radius: 5px;
+      cursor: pointer;
+      outline: none;
+    }
 
-      .startBtn:hover {
-          color: white;
-          background-color: #B399D4;
-          
+    .startBtn:hover {
+      color: white;
+      background: #B399D4;
       }
 
   .submitBtn {
