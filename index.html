@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>code-quizzing</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Code-Quizing</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <script src="assets/js/script.js"></script>
 </head>
 
 <body>
@@ -12,34 +13,32 @@
     <div>
     <nav>
     <ul>
-        <li>View high scores</li>
-        <li style="float: right">Time:</li>
+        <li class="high-scores">View high scores</li>
+        <li style="float: right" span id='timer'>Time:</li>
       </ul>
     </nav>
     </div>
 
       <!-- NAV Section End -->
 
-      <!-- MAIN Heading Section -->
-      <div>
-      <h1>Coding Quiz Challenge</h1>
+      <!-- MAIN Section -->
       <div class="container">
+          
+      <h1>Coding Quiz Challenge</h1>
       <p>Try to answer the following code related questions within the time limit. <br />Keep in mind that incorrect answers will penalize your score/time <br />by ten seconds!</p>
-
-      <button id="start">Start Quiz</button>
+      <button class="startBtn">Start Quiz</button>
         </div>
-      </div>
+      
 
       <!-- MAIN Heading End-->
 
       <!-- Quiz Section-->
-      <div id="quiz">
-      </div>
-      <button id="submit">Submit</button>
+      <div class="question"></div>
+      <ul class="choiceList"></ul>
+      <div class="quizMessage"></div>
       <div id="results"></div>
-
+      <button class="submitBtn">Submit</button>
       
-      
-    <script src="assets/js/script.js"></script>
+    
 </body>
 </html>
