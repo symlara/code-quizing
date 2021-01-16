@@ -57,10 +57,16 @@ function renderQuestion() {
     options.innerHTML = q.options;
 }
 
-startBtn.addEventListener("click", startQuiz);
+start.addEventListener("click", startQuiz);
 
-
-
+//start quiz
+function startQuiz() {
+    start.style.display = "none";
+    renderQuestion();
+    quiz.style.display = "block";
+    renderCounter();
+    TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
+}
 
 
 
