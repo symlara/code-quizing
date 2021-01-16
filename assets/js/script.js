@@ -1,3 +1,13 @@
+// select all elements 
+const start = document.getElementById("start");
+const question = document.getElementById("question");
+const options = document.getElementById("options");
+const counter = document.getElementById("counter");
+const timeGauge = document.getElementById("timeGauge");
+const scoreDiv = document.getElementById("scoreContainer");
+
+
+
 // The array of questions, options, and answers for the quiz
 
 let questions = [
@@ -28,13 +38,35 @@ let questions = [
      answer: "console.log"
      }];
 
+// creating new variables
 
-// selecting all required variables
-var startBtn = document.querySelector(".startBtn");
-var submitBtn = document.querySelector(".submitBtn");
-var option_list = document.querySelector(".option_list");
-var back_button = document.querySelector(".back_button");
-var clear_scores = document.querySelector(".clear_scores");
-var timerEl = document.getElementById('countdown');
+const lastQuestion = questions.length - 1;
+let runningQuestion = 0;
+let count = 75;
+const questionTime = 15; // 15s
+const gaugeWidth = 20; // 20px
+const gaugeUnit = gaugeWidth / questionTime
+let TIMER;
+let score = 0;
 
-//create a function for countdown?
+// render a question
+function renderQuestion() {
+    let q = questions[runningQuestion];
+
+    question.innerHTML = "<p>"+ q.question +"</p>";
+    options.innerHTML = q.options;
+}
+
+startBtn.addEventListener("click", startQuiz);
+
+
+
+
+
+
+
+
+
+
+
+

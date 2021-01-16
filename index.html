@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +12,14 @@
 
 <body>
     <!-- NAV Section -->
-    <div>
+    <div class="container">
     <nav>
     <ul>
         <li class="high-scores">View high scores</li>
-        <li class="timer time_txt" style="float: right">Time: 0</li>
+        <div class="counter"></div>
+        <div class="timeGauge">
+          <li class="btimeGauge">Time: 0</li>
+        </div>
       </ul>
     </nav>
     </div>
@@ -22,30 +27,21 @@
       <!-- NAV Section End -->
 
       <!-- MAIN Section -->
-      <div class="container">
-      <h1>Coding Quiz Challenge</h1>
-      <p>Try to answer the following code related questions within the time limit. <br />Keep in mind that incorrect answers will penalize your score/time <br />by ten seconds!</p>
-      <button class="startBtn">Start Quiz</button>
+      <!-- Start Quiz button -->
+      <div class="start_btn">
+        <div id="quiz">
+          <div id="question"></div>
+          <div id="options"></div>
         </div>
+
+        <div id="scoreContainer"></div>
+        <div class="title-1">Coding Quiz Challenge</div>
+        <p>Try to answer the following code related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+      <button id="start">Start Quiz</button>
+      </div>
       
 
-      <!-- MAIN Heading End-->
-
-      <!-- Submit Button -->
-      <button class="submitBtn">Submit</button>
-
-
-      <div class="option_list">
-        <!-- Here I've inserted options from JavaScript -->
-    </div>
-
-    <div class="back_button">
-      <!-- Here I've inserted JavaScript for Go back button -->
-  </div>
-
-  <div class="clear_scores">
-    <!-- Here I've inserted JavaScript for clear high scores button -->
-</div>
+    
 
 
 
