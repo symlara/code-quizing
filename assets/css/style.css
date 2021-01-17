@@ -101,6 +101,9 @@
         position: absolute;
         right: 0;
         top: 0;
+        font-size: 25px;
+        font-weight: bold;
+        display: inline;
       }
 
       #question p{
@@ -115,7 +118,7 @@
         padding: 10px;
         top: 125px;
         right: 0;
-        
+        font-size: 12px;
       }
 
       .option {

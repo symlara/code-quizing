@@ -1,6 +1,7 @@
 // select all elements 
 const start = document.getElementById("start");
 const question = document.getElementById("question");
+const options = document.getElementById("options");
 const option1 = document.getElementById("1");
 const option2 = document.getElementById("2");
 const option3 = document.getElementById("3");
@@ -77,6 +78,8 @@ let score = 0;
 
 
 
+
+
 // render a question
 function renderQuestion() {
     let q = questions[runningQuestion];
@@ -115,14 +118,12 @@ function startQuiz() {
 function renderCounter() {
     if(count <= questionTime){
         counter.innerHTML = count;
-        timeGauge.style.width = count * gaugeUnit + "px";
-        count--;
+        count++;
     }else {
-        count = 0;
+        count = 75;
         // preview alert?
         
         if(runningQuestion < lastQuestion){
-            runningQuestion++;
             renderQuestion();
         }else {
             // end quiz
@@ -168,14 +169,11 @@ function answerIsWrong() {
 
 // score render
 function scoreRender() {
-    scoreDiv.style.display = "block";
+   if(runningQuestion == lastQuestion) {
+       clearInterval();
+       
+   }
+        
+    }
 
     const scorePerCent = Math.round(100 * score/questions.length);
-
-scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";
-}
-
-
-
-
-
