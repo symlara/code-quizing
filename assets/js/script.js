@@ -1,7 +1,10 @@
 // select all elements 
 const start = document.getElementById("start");
 const question = document.getElementById("question");
-const options = document.getElementById("options");
+const option1 = document.getElementById("1");
+const option2 = document.getElementById("2");
+const option3 = document.getElementById("3");
+const option4 = document.getElementById("4");
 const counter = document.getElementById("counter");
 const timeGauge = document.getElementById("timeGauge");
 const scoreDiv = document.getElementById("scoreContainer");
@@ -12,29 +15,49 @@ const scoreDiv = document.getElementById("scoreContainer");
 
 let questions = [
     { question: 'Commonly used data types DO Not Include:',  
-    options: [ "1. strings", "2. booleans", "3. alerts", "4. numbers" ],
+    options: [ 
+        "1. strings", 
+        "2. booleans", 
+        "3. alerts", 
+        "4. numbers" ],
     answer: "alerts"
  
 }, {
      question: 'The condition in an if / else statement is enclosed with ___.',
-     options: [ "1. quotes", "2. curly brackets", "3. parenthesis", "4. square brackets" ],
+     options: [ 
+         "1. quotes", 
+         "2. curly brackets", 
+         "3. parenthesis", 
+         "4. square brackets" ],
      answer: "parenthesis"
      },
      
  {
      question: 'Arrays in JavaScript can be used to store ___.',
-     options: ["1. numbers and strings", "2. other arrays", "3. booleans", "4. all of the above"],
+     options: [
+         "1. numbers and strings", 
+         "2. other arrays", 
+         "3. booleans", 
+         "4. all of the above"],
      answer: "all of the above"
      },
      
  {
      question: 'String values must be enclosed within ___ when being assigned to variables.',
-     options: ["1. commas", "2. curly brackets", "3. quotes", "4. parenthesis" ],
+     options: [
+         "1. commas", 
+         "2. curly brackets", 
+         "3. quotes", 
+         "4. parenthesis" ],
      correctAnswer: "quotes"
     },
  {
      question: 'A very useful tool used during development and debugging for printing content to the debugger is:',
-     options: ["1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"],
+     options: [
+         "1. JavaScript", 
+         "2. terminal/bash", 
+         "3. for loops", 
+         "4. console.log"],
      answer: "console.log"
      }];
 
@@ -54,7 +77,10 @@ function renderQuestion() {
     let q = questions[runningQuestion];
 
     question.innerHTML = "<p>"+ q.question +"</p>";
-    options.innerHTML = q.options;
+    option1.innerHTML = q.option1;
+    option2.innerHTML = q.option2;
+    option3.innerHTML = q.option3;
+    option4.innerHTML = q.option4;
 }
 
 start.addEventListener("click", startQuiz);
@@ -69,8 +95,67 @@ function startQuiz() {
 }
 
 
+// counter render
+function renderCount() {
+    if(count <= questionTime){
+        counter.innerHTML = count;
+        timeGauge.style.width = count * gaugeUnit + "px";
+        count--;
+    }else {
+        count = 0;
+        // preview alert?
+        answerIsWrong();
+        if(runningQuestion < lastQuestion){
+            runningQuestion++;
+            renderQuestion();
+        }else {
+            // end quiz
+            clearInterval(TIMER);
+            scoreRender();
+        }
+    }
+}
 
 
+// checkAnswer
+
+function checkAnswer(answer){
+    if(answer == questions[runningQuestion].correct){
+        score++;
+        // display correct
+        answerIsCorrect();
+    } else {
+        // display wrong
+        answerIsWrong();
+    }
+    count = 0;
+    if(runningQuestion < lastQuestion){
+        runningQuestion++;
+        renderQuestion();
+    }else {
+        // end quiz
+        clearInterval(TIMER);
+        scoreRender();
+    }
+}
+
+// answer is correct
+function answerIsCorrect() {
+    window.alert("Correct!");
+}
+
+function answerIsWrong() {
+    window.alert("Wrong!");
+}
+
+// score render
+function scoreRender() {
+    scoreDiv.style.display = "block";
+
+    const scorePerCent = Math.round(100 * score/questions.length);
+
+scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";
+}
 
 
 

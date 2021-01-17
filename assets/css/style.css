@@ -1,12 +1,4 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  background: #fff;
-}
 
 /* nav section */
 
@@ -96,8 +88,38 @@ body {
         padding-bottom: 20px;
       }
 /* start button div end */
-  
 
-      
+      #question {
+        width: 400px;
+        height: 120px;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
 
-      
+      #question p{
+        margin : 0;
+        padding : 15px;
+        font-size: 1.25em;
+    }
+
+      #options {
+        width: 380px;
+        position: absolute;
+        padding: 10px;
+        top: 125px;
+        right: 0;
+      }
+
+      .option {
+        display: inline-block;
+        width: 130px;
+        text-align: center;
+        cursor: pointer;
+        padding: 5px;
+      }
+
+      .option:hover {
+        border: 2px solid grey;
+        font-weight: bold;
+      }
