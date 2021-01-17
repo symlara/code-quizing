@@ -1,0 +1,43 @@
+#displayHighScores{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    font-size: 25px;
+    
+  }
+
+  #back {
+    background-color: #3c1361;
+    color: white;
+    padding: 4px 20px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    display: inline-flex;
+    font-size: 16px
+  }
+
+  #back:hover {
+    color: white;
+    background: #B399D4;
+  }
+
+  #high-scores {
+    background-color: #3c1361;
+    color: white;
+    padding: 4px 20px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    display: inline-flex;
+    font-size: 16px
+  }
+  #high-scores:hover {
+    color: white;
+    background: #B399D4;
+  }
+
+  #initials {
+      background-color: #b19cd9;
+      opacity: 5px;
+  }

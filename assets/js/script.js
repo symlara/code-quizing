@@ -162,8 +162,10 @@ function checkAnswer(answer){
     if(runningQuestion < lastQuestion){
         runningQuestion++;
         renderQuestion();
+        
     }else{
         // end the quiz / render score
+        showResults();
         
         clearInterval(TIMER);
         
@@ -187,4 +189,6 @@ function checkAnswer(answer){
     function showResults() {
         // render window.location url page with the results and intial label input on it
         window.location.href = "index_1.html";
+        displayHighScores()
     }
+
