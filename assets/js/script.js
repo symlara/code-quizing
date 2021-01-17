@@ -70,7 +70,7 @@ let questions = [
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let count = 75;
-const questionTime = 15; // 15s
+const questionTime = 10; // 10s
 const gaugeWidth = 20; // 20px
 const gaugeUnit = gaugeWidth / questionTime
 let TIMER;
@@ -116,9 +116,9 @@ function startQuiz() {
 
 // counter render
 function renderCounter() {
-    if(count <= questionTime){
+    if(count > questionTime){
         counter.innerHTML = count;
-        count++;
+        count -= 2;
     }else {
         count = 75;
         // preview alert?
