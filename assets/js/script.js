@@ -9,6 +9,7 @@ const option4 = document.getElementById("4");
 const counter = document.getElementById("counter");
 const timeGauge = document.getElementById("timeGauge");
 const scoreDiv = document.getElementById("scoreContainer");
+const intialInput = document.getElementsByTagName("initial-input");
 
 
 
@@ -21,7 +22,7 @@ let questions = [
         "2. booleans", 
         "3. alerts", 
         "4. numbers" ],
-    answer: "alerts"
+    answer: 2
  
 }, {
      question: 'The condition in an if / else statement is enclosed with ___.',
@@ -30,7 +31,7 @@ let questions = [
          "2. curly brackets", 
          "3. parenthesis", 
          "4. square brackets" ],
-     answer: "parenthesis"
+     answer: 2
      },
      
  {
@@ -40,7 +41,7 @@ let questions = [
          "2. other arrays", 
          "3. booleans", 
          "4. all of the above"],
-     answer: "all of the above"
+     answer: 3
      },
      
  {
@@ -50,7 +51,7 @@ let questions = [
          "2. curly brackets", 
          "3. quotes", 
          "4. parenthesis" ],
-     correctAnswer: "quotes"
+     correctAnswer: 2
     },
  {
      question: 'A very useful tool used during development and debugging for printing content to the debugger is:',
@@ -59,7 +60,7 @@ let questions = [
          "2. terminal/bash", 
          "3. for loops", 
          "4. console.log"],
-     answer: "console.log"
+     answer: 3
      }];
 
      
@@ -137,32 +138,26 @@ function renderCounter() {
 // checkAnswer
 
 function checkAnswer(answer){
-    if( answer == questions[runningQuestion].correct){
-        // answer is correct
-        score++;
-        answerIsCorrect();
-    }else{
-        // answer is wrong
-        answerIsWrong();
-    }
-    count = 0;
-    if(runningQuestion < lastQuestion){
-        runningQuestion++;
-        renderQuestion();
-    }else{
-        // end the quiz / render score
-        clearInterval(TIMER);
-        scoreRender();
+    const clickedButton = 
+    document.getElementById(answer);
+    const clickedAnswer = 
+    clickedButton.innerText;
+    
+    
+    const answerIndex = 
+    questions[runningQuestion].answer;
+
+    const runningAnswer = 
+    questions[runningQuestion].options[anwserIndex];
+
+    if (clickedAnswer === runningAnswer) {
+        // answer is correct//
+    }else {
+        // answer is incorrect..
     }
 }
 
-function answerIsCorrect() {
-    alert('Correct!');
-}
 
-function answerIsWrong() {
-   alert('Incorrect!');
-}
 
 
 
@@ -171,6 +166,7 @@ function answerIsWrong() {
 function scoreRender() {
    if(runningQuestion == lastQuestion) {
        clearInterval();
+
        
    }
         
