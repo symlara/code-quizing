@@ -148,11 +148,25 @@ function checkAnswer(answer){
     questions[runningQuestion].answer;
 
     const runningAnswer = 
-    questions[runningQuestion].options[anwserIndex];
+    questions[runningQuestion].options[answerIndex];
+
+    if(runningQuestion < lastQuestion){
+        runningQuestion++;
+        renderQuestion();
+    }else{
+        // end the quiz / render score
+        clearInterval(TIMER);
+        scoreRender();
+    }
 
     if (clickedAnswer === runningAnswer) {
+        score++;
+        window.alert("Correct!");
+        console.log("correct");
         // answer is correct//
     }else {
+        window.alert("Incorrect!");
+        console.log("incorrect")
         // answer is incorrect..
     }
 }
