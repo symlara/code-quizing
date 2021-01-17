@@ -9,7 +9,13 @@ const option4 = document.getElementById("4");
 const counter = document.getElementById("counter");
 const timeGauge = document.getElementById("timeGauge");
 const scoreDiv = document.getElementById("scoreContainer");
-const intialInput = document.getElementsByTagName("initial-input");
+
+
+const optionBtns = 
+document.querySelectorAll(".option");
+optionBtns.forEach(function (button) {
+    button.style.display = "none";
+});
 
 
 
@@ -81,8 +87,6 @@ let score = 0;
 
 
 
-
-
 // render a question
 function renderQuestion() {
     let q = questions[runningQuestion];
@@ -113,6 +117,10 @@ function startQuiz() {
     quiz.style.display = "block";
     renderCounter();
     TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
+
+    optionBtns.forEach(function (button) {
+        button.style.display = "inline-block";
+    });
 }
 
 
@@ -177,16 +185,16 @@ function checkAnswer(answer){
 
 
 function showResults() {
-    if(runningQuesiton == lastQuestion) {
-        
+    if(lastQuestion) {
+       
     }
 }
 
 
 // score render
 function scoreRender() {
-   if(runningQuestion == lastQuestion) {
-      
+    if(runningQuestion == lastQuestion) {
+      showResults();
 
        
    }
