@@ -48,6 +48,8 @@
       outline: none;
       top: 50%;
       text-align: center;
+      word-break: break-all;
+      align-items: center;
     }
 
 
@@ -75,14 +77,18 @@
         text-align: center;
       }
 
-      .title-1 {
+      #myDIV {
         font-size: 36px;
         justify-content: space-between;
-        font-weight: bold;
         padding-bottom: 15px;
       }
 
-      p {
+      #myDIV h1 {
+        font-size: 36px;
+      }
+      
+      
+      #myDIV p {
         margin: 0 auto;
         font-size: 26px;
         padding-bottom: 20px;
@@ -109,17 +115,29 @@
         padding: 10px;
         top: 125px;
         right: 0;
+        
       }
 
       .option {
-        display: inline-block;
         width: 130px;
         text-align: center;
         cursor: pointer;
         padding: 5px;
+        background-color: #3c1361;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+        border-radius: 5px;
       }
+
+      
 
       .option:hover {
         border: 2px solid grey;
         font-weight: bold;
+        background: #B399D4;
+        color: white;
       }
+
+      

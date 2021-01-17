@@ -61,6 +61,9 @@ let questions = [
      answer: "console.log"
      }];
 
+     
+     
+
 // creating new variables
 
 const lastQuestion = questions.length - 1;
@@ -72,18 +75,29 @@ const gaugeUnit = gaugeWidth / questionTime
 let TIMER;
 let score = 0;
 
+
+
 // render a question
 function renderQuestion() {
     let q = questions[runningQuestion];
 
     question.innerHTML = "<p>"+ q.question +"</p>";
-    option1.innerHTML = q.option1;
-    option2.innerHTML = q.option2;
-    option3.innerHTML = q.option3;
-    option4.innerHTML = q.option4;
+    option1.innerHTML = q.options[0];
+    option2.innerHTML = q.options[1];
+    option3.innerHTML = q.options[2];
+    option4.innerHTML = q.options[3];
+}
+
+function renderAnswer() {
+    question.innerHTML = "<p>"+ q.question +"</p>";
+    question.innerHTML = q.answer[0];
 }
 
 start.addEventListener("click", startQuiz);
+
+
+
+
 
 //start quiz
 function startQuiz() {
@@ -95,8 +109,9 @@ function startQuiz() {
 }
 
 
+
 // counter render
-function renderCount() {
+function renderCounter() {
     if(count <= questionTime){
         counter.innerHTML = count;
         timeGauge.style.width = count * gaugeUnit + "px";
@@ -120,33 +135,35 @@ function renderCount() {
 // checkAnswer
 
 function checkAnswer(answer){
-    if(answer == questions[runningQuestion].correct){
+    if( answer == questions[runningQuestion].correct){
+        // answer is correct
         score++;
-        // display correct
         answerIsCorrect();
-    } else {
-        // display wrong
+    }else{
+        // answer is wrong
         answerIsWrong();
     }
     count = 0;
     if(runningQuestion < lastQuestion){
         runningQuestion++;
         renderQuestion();
-    }else {
-        // end quiz
+    }else{
+        // end the quiz / render score
         clearInterval(TIMER);
         scoreRender();
     }
 }
 
-// answer is correct
 function answerIsCorrect() {
-    window.alert("Correct!");
+    document.getElementById(runningQuestion).style.backgroundColor = "#B399D4";
 }
 
 function answerIsWrong() {
-    window.alert("Wrong!");
+    document.getElementById(runningQuestion).style.backgroundColor = "#B399D4";
 }
+
+
+
 
 // score render
 function scoreRender() {
