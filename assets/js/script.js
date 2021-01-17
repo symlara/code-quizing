@@ -181,22 +181,7 @@ function checkAnswer(answer){
         // answer is incorrect..
     }
 }
-
-
-
-function showResults() {
-    if(lastQuestion) {
-       
-    }
-}
-
-
-// score render
-function scoreRender() {
-    if(runningQuestion == lastQuestion) {
-      showResults();
-
-       
-   }
-        
+ 
+    function showResults () {
+        // render window.location url page with the results and intial label input on it
     }
