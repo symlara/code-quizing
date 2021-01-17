@@ -102,6 +102,7 @@ start.addEventListener("click", startQuiz);
 //start quiz
 function startQuiz() {
     start.style.display = "none";
+    document.getElementById("myDIV").style.display = "none";
     renderQuestion();
     quiz.style.display = "block";
     renderCounter();
@@ -119,7 +120,7 @@ function renderCounter() {
     }else {
         count = 0;
         // preview alert?
-        answerIsWrong();
+        
         if(runningQuestion < lastQuestion){
             runningQuestion++;
             renderQuestion();
@@ -155,11 +156,11 @@ function checkAnswer(answer){
 }
 
 function answerIsCorrect() {
-    document.getElementById(runningQuestion).style.backgroundColor = "#B399D4";
+    alert('Correct!');
 }
 
 function answerIsWrong() {
-    document.getElementById(runningQuestion).style.backgroundColor = "#B399D4";
+   alert('Incorrect!');
 }
 
 
