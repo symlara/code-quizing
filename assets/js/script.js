@@ -164,7 +164,7 @@ function checkAnswer(answer){
         renderQuestion();
     }else{
         // end the quiz / render score
-        scoreRender();
+        
         clearInterval(TIMER);
         
     }
@@ -181,7 +181,10 @@ function checkAnswer(answer){
         // answer is incorrect..
     }
 }
+
+
  
-    function showResults () {
+    function showResults() {
         // render window.location url page with the results and intial label input on it
+        window.location.href = "index_1.html";
     }

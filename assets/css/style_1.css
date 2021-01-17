@@ -1,0 +1,41 @@
+/* nav section */
+
+.container {
+    text-decoration: none;
+    display: block;
+    list-style-type: none;
+    padding: 14px 16px;
+
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    
+
+
+  ul .btimeGauge {
+    float: right;
+    font-size: 20px;
+    list-style-type: none;
+  }
+
+
+
+  ul .high-scores {
+    color: #B399D4;
+    font-weight: 100;
+    font-size: 20px;
+    
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  #scoreContainer h2 {
+    align-items: center;
+  }
