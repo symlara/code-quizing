@@ -98,7 +98,7 @@
       #question {
         width: 400px;
         height: 120px;
-        position: absolute;
+        position: relative;
         right: 0;
         top: 0;
         font-size: 25px;
@@ -119,6 +119,7 @@
         top: 125px;
         right: 0;
         font-size: 12px;
+        align-items: center;
       }
 
       .option {
@@ -143,4 +144,6 @@
         color: white;
       }
 
-      
+      #scoreContainer form {
+        display: none;
+      }

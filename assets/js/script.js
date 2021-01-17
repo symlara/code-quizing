@@ -81,6 +81,8 @@ let score = 0;
 
 
 
+
+
 // render a question
 function renderQuestion() {
     let q = questions[runningQuestion];
@@ -97,14 +99,14 @@ function renderAnswer() {
     question.innerHTML = q.answer[0];
 }
 
+
 start.addEventListener("click", startQuiz);
-
-
 
 
 
 //start quiz
 function startQuiz() {
+    count -= 2;
     start.style.display = "none";
     document.getElementById("myDIV").style.display = "none";
     renderQuestion();
@@ -119,11 +121,10 @@ function startQuiz() {
 function renderCounter() {
     if(count > questionTime){
         counter.innerHTML = count;
-        count -= 2;
+        
     }else {
         count = 75;
         // preview alert?
-        
         if(runningQuestion < lastQuestion){
             renderQuestion();
         }else {
@@ -143,7 +144,7 @@ function checkAnswer(answer){
     const clickedAnswer = 
     clickedButton.innerText;
     
-    
+    count -= 1;
     const answerIndex = 
     questions[runningQuestion].answer;
 
@@ -155,8 +156,9 @@ function checkAnswer(answer){
         renderQuestion();
     }else{
         // end the quiz / render score
-        clearInterval(TIMER);
         scoreRender();
+        clearInterval(TIMER);
+        
     }
 
     if (clickedAnswer === runningAnswer) {
@@ -165,6 +167,7 @@ function checkAnswer(answer){
         console.log("correct");
         // answer is correct//
     }else {
+        count -= 10;
         window.alert("Incorrect!");
         console.log("incorrect")
         // answer is incorrect..
@@ -173,17 +176,19 @@ function checkAnswer(answer){
 
 
 
-
+function showResults() {
+    if(runningQuesiton == lastQuestion) {
+        
+    }
+}
 
 
 // score render
 function scoreRender() {
    if(runningQuestion == lastQuestion) {
-       clearInterval();
+      
 
        
    }
         
     }
-
-    const scorePerCent = Math.round(100 * score/questions.length);
