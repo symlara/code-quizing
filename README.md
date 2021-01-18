@@ -13,3 +13,5 @@ However if you answer a question incorrectly you will be penalized and lose 10 s
 
 Once you're finished answering every question you will be taken to a page that asks for your initials and once you click submit or hit enter you will be 
 sent back to the beginning of the quiz.
+
+![code quizing](./assets/code-quiz-1.png)
