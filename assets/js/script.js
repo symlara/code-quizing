@@ -216,7 +216,7 @@ var userinitial = "initials";
 localStorage.setItem("initial", userinitial);
 
 var userinitial = 
-localStorage.getItem("initial");
+localStorage.getItem("initials");
 
 
 
