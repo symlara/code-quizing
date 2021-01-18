@@ -15,8 +15,14 @@ const optionBtns =
 document.querySelectorAll(".option");
 optionBtns.forEach(function (button) {
     button.style.display = "none";
+    
 });
 
+const initialForm =
+document.querySelectorAll(".forms");
+initialForm.forEach(function (form) {
+    form.style.display = "none";
+});
 
 
 // The array of questions, options, and answers for the quiz
@@ -121,6 +127,10 @@ function startQuiz() {
     optionBtns.forEach(function (button) {
         button.style.display = "inline-block";
     });
+
+    initialForm.forEach(function (form) {
+        form.style.display = "none";
+    });
 }
 
 
@@ -164,7 +174,9 @@ function checkAnswer(answer){
         renderQuestion();
         
     }else{
+        quiz.style.display = "none";
         // end the quiz / render score
+        Initials();
         showResults();
         
         clearInterval(TIMER);
@@ -184,11 +196,16 @@ function checkAnswer(answer){
     }
 }
 
+function Initials() {
+    localStorage.setItem(".high-scores", initials);
+    window.location.pathname = "index.html";
+}
+
 
  
     function showResults() {
         // render window.location url page with the results and intial label input on it
-        window.location.href = "index_1.html";
-        displayHighScores()
+        window.location.href = "highscores.html";
+        
     }
 

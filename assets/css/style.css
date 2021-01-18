@@ -34,9 +34,7 @@
     
   }
 
-  a {
-    text-decoration: none;
-  }
+  
 
 
   /* nav section end */
@@ -151,4 +149,29 @@
         color: white;
       }
 
-      
+
+      /* css for initials form*/ 
+
+
+      #scoreContainer {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+        font-size: 25px;
+        
+      }
+    
+      #submit {
+        background-color: #3c1361;
+        color: white;
+        padding: 4px 20px;
+        cursor: pointer;
+        outline: none;
+        border-radius: 5px;
+        display: inline-flex;
+      }
+    
+      #submit:hover {
+        color: white;
+        background: #B399D4;
+      }
