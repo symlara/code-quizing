@@ -168,6 +168,17 @@ function checkAnswer(answer){
 
     const runningAnswer = 
     questions[runningQuestion].options[answerIndex];
+    if (clickedAnswer === runningAnswer) {
+        score++;
+        window.alert("Correct!");
+        console.log("correct");
+        // answer is correct//
+    }else {
+        count -= 10;
+        window.alert("Incorrect!");
+        console.log("incorrect")
+        // answer is incorrect..
+    }
 
     if(runningQuestion < lastQuestion){
         runningQuestion++;
@@ -183,17 +194,7 @@ function checkAnswer(answer){
         
     }
 
-    if (clickedAnswer === runningAnswer) {
-        score++;
-        window.alert("Correct!");
-        console.log("correct");
-        // answer is correct//
-    }else {
-        count -= 10;
-        window.alert("Incorrect!");
-        console.log("incorrect")
-        // answer is incorrect..
-    }
+    
 }
 
 function Initials() {
