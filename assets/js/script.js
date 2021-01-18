@@ -9,6 +9,7 @@ const option4 = document.getElementById("4");
 const counter = document.getElementById("counter");
 const timeGauge = document.getElementById("timeGauge");
 const scoreDiv = document.getElementById("scoreContainer");
+const submitBtn = document.getElementById("submit");
 
 
 const optionBtns = 
@@ -148,7 +149,6 @@ function renderCounter() {
         }else {
             // end quiz
             clearInterval(TIMER);
-            scoreRender();
         }
     }
 }
@@ -174,6 +174,7 @@ function checkAnswer(answer){
         console.log("correct");
         // answer is correct//
     }else {
+        score--;
         count -= 10;
         window.alert("Incorrect!");
         console.log("incorrect")
@@ -187,26 +188,39 @@ function checkAnswer(answer){
     }else{
         quiz.style.display = "none";
         // end the quiz / render score
-        Initials();
-        showResults();
-        
         clearInterval(TIMER);
-        
-    }
 
-    
+
+        
+
+        
+
+
+        // show form for users to type initials
+       
+       
+       initialForm.forEach(function (form) {
+        form.style.display = "inline-block";
+    });
+
+   
+  
+    function callInitials() {
+        var initials = localStorage.getItem('initials');
+        window.location.pathname = "index.html";
+    }
+   
+       
 }
 
-function Initials() {
-    localStorage.setItem(".high-scores", initials);
-    window.location.pathname = "index.html";
+
+
+
+
+
+
+// write logic for what happens when the submit button is clicked
+
+
+
 }
-
-
- 
-    function showResults() {
-        // render window.location url page with the results and intial label input on it
-        window.location.href = "highscores.html";
-        
-    }
-
