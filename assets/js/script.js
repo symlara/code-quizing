@@ -20,10 +20,14 @@ optionBtns.forEach(function (button) {
 });
 
 const initialForm =
+
 document.querySelectorAll(".forms");
 initialForm.forEach(function (form) {
     form.style.display = "none";
+
+  
 });
+
 
 
 // The array of questions, options, and answers for the quiz
@@ -77,7 +81,7 @@ let questions = [
      }];
 
      
-     
+
 
 // creating new variables
 
@@ -191,8 +195,9 @@ function checkAnswer(answer){
         clearInterval(TIMER);
 
 
-        
-
+        submitBtn.addEventListener("click", function(event) {
+            
+        })
         
 
 
@@ -201,20 +206,17 @@ function checkAnswer(answer){
        
        initialForm.forEach(function (form) {
         form.style.display = "inline-block";
+        
     });
-
-   
-  
-    function callInitials() {
-        var initials = localStorage.getItem('initials');
-        window.location.pathname = "index.html";
-    }
-   
        
 }
 
 
+var userinitial = "initials";
+localStorage.setItem("initial", userinitial);
 
+var userinitial = 
+localStorage.getItem("initial");
 
 
 
@@ -222,5 +224,12 @@ function checkAnswer(answer){
 // write logic for what happens when the submit button is clicked
 
 
+}
 
+
+
+function userInitials() {
+    var userContent = 
+    document.getElementById("initials").value;
+    
 }
